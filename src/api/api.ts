@@ -39,7 +39,7 @@ export async function getUserData(username: string, password: string) {
 }
 
 export async function transferFunds(username: string, password: string, destination: string, amount: number, message?: string) {
-    const data = (await axios.post(API_URL + '/transfer', {authentication: {username, password}, amount, destination})).data as User & {message?: string};
+    const data = (await axios.post(API_URL + '/transfer', {authentication: {username, password}, amount, destination, message})).data as User & {message?: string};
 
     if(data.message) {
         return data.message;

@@ -7,7 +7,6 @@ import { useNotification } from './contexts/NotificationContext';
 
 const App: React.FC = () => {
   const [leaderboard, setLeaderboard] = useState<LeaderboardData[]>([]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   // You'll need to define setUser somewhere, and set it with the user data when they log in.
