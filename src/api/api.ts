@@ -36,3 +36,13 @@ export async function getUserData(username: string, password: string) {
 
     return data as User
 }
+
+export async function transferFunds(username: string, password: string, destination: string, amount: number) {
+    const data = (await axios.post(API_URL + '/transfer', {authentication: {username, password}, amount, destination})).data as User & {message?: string};
+
+    if(data.message) {
+        return data.message;
+    }
+
+    return data as User
+}
