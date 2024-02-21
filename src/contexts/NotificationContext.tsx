@@ -85,8 +85,8 @@ const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({
 
   function getColor(col: string) {
     const colors: {[key: string]: string} = {
-      'ok': "#4CAF50",
-      'error': "#F44336"
+      'ok': "#A5D6A7",
+      'error': "#EF9A9A"
     }
 
     if(Object.keys(colors).includes(col)) {

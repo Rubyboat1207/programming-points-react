@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.tsx'
 import './index.css'
+import { NotificationProvider } from './contexts/NotificationContext.tsx'
 
 const routes = createBrowserRouter([
   {
@@ -13,6 +14,8 @@ const routes = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={routes} />
+    <NotificationProvider>
+      <RouterProvider router={routes} />
+    </NotificationProvider>
   </React.StrictMode>,
 )

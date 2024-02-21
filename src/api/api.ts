@@ -19,6 +19,7 @@ export type Transaction = {
     difference: number;
     prev_bal: number;
     post_bal: number;
+    message: string;
 };
 
 export async function checkLeaderboard() {
@@ -37,7 +38,7 @@ export async function getUserData(username: string, password: string) {
     return data as User
 }
 
-export async function transferFunds(username: string, password: string, destination: string, amount: number) {
+export async function transferFunds(username: string, password: string, destination: string, amount: number, message?: string) {
     const data = (await axios.post(API_URL + '/transfer', {authentication: {username, password}, amount, destination})).data as User & {message?: string};
 
     if(data.message) {
